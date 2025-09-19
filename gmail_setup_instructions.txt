@@ -1,0 +1,25 @@
+Gmail OAuth2 Setup Instructions
+================================
+
+Step 1: Visit this URL in your browser:
+https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=147969369327-r81lgbd42o188cno7lj22845kmprvv6b.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.send&state=MzLAXCjkUlwfptHcKWGSsSH52yB0ig&prompt=consent&access_type=offline
+
+Step 2: 
+- Sign in with your Gmail account
+- Grant permission to send emails
+- Copy the authorization code from the redirect URL
+
+Step 3: Run the email script:
+source gmail_env/bin/activate
+python3 send_gmail_oauth.py
+
+Step 4: When prompted, paste the authorization code
+
+The script will then:
+- Save your authentication tokens for future use
+- Send the FantasyPros API email to both:
+  * api@fantasypros.com 
+  * rodric@fantasypros.com
+- Show which Gmail account is being used
+
+Note: You only need to do the OAuth flow once. After that, the script will use saved tokens automatically.
